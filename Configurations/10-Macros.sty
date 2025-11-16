@@ -1,0 +1,69 @@
+%%% Document Macros and Extras %%%
+
+% Blank page with a warning indicating it is intentionally left blank.
+\newcommand\blankpage{
+    \clearpage
+    \thispagestyle{empty}%
+    \vspace*{\fill}
+    \begin{center}
+        \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+            \textcolor{gray!50}{\textit{Página intencionalmente deixada em branco.}}
+        }{%
+            \textcolor{gray!50}{\textit{This page intentionally left blank.}}
+        }
+    \end{center}
+    \vspace*{\fill}
+    \clearpage
+} 
+
+% Command that will combine a plain page style and a blank one.
+\newcommand{\plainblankpage}{\thispagestyle{plain}\blankpage}
+
+% Indicates that a writing guide will be displayed.
+\newcommand{\guideinfo}[1]{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \noindent\textcolor{note}{\faInfoCircle\ \textbf{Orientação Para a Escrita}}%
+    }{
+        \noindent\textcolor{note}{\faInfoCircle\ \textbf{Writing Guidance}}%
+    }
+    \\[.55em]%
+    \noindent #1%
+}
+
+\newcommand{\exampleinfo}[1]{%
+    \ifthenelse{\equal{\LanguageOption}{portuguese}}{%
+        \noindent\textcolor{black}{\faInfoCircle\ \textbf{Exemplo de Utilização}}%
+    }{
+        \noindent\textcolor{black}{\faInfoCircle\ \textbf{Example of Use}}%
+    }
+    \\[.55em]%
+    \noindent #1%
+}
+
+% Redefine the underline command.
+\setlength{\ULdepth}{1.8pt}\contourlength{1.3pt}
+\newcommand{\myuline}[1]{
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
+
+% Abstract keywords.
+\NewDocumentCommand{\keywordsen}{m}{\vspace{.4cm}\noindent\textbf{Keywords:} #1}
+\NewDocumentCommand{\keywordspt}{m}{\vspace{.4cm}\noindent\textbf{Palavras-Chave:} #1}
+
+% Landscape mode - the proper way!
+\def\ifGm@preamble#1{\@firstofone}
+\appto\restoregeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}
+\apptocmd\newgeometry{%
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight}{}{}
+\newenvironment{landscapemode}[2]{%
+    \newgeometry{paperwidth=#1,paperheight=#2,hmargin=3cm,vmargin=5cm,top=3cm,landscape}
+    \fancyheadoffset{0pt}
+    %\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+}{%
+    \restoregeometry
+    \fancyheadoffset{0pt}
+} 

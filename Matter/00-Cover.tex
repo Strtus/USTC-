@@ -1,0 +1,139 @@
+\ifthenelse{\equal{\CoverOption}{classic}}{
+    \newcommand\BackgroundPicCover{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/USTC cover.pdf}% 
+    \vfill
+    }}}
+}{
+    \newcommand\BackgroundPicCover{%
+    \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Figures/Theme/USTC cover.pdf}%
+    \vfill
+    }}}
+}
+
+\AddToShipoutPictureBG*{\BackgroundPicCover}
+
+\newgeometry{margin=1.98cm, top=2.15cm, bottom=1.47cm}
+\begin{titlepage}
+    \latofont
+    \ifthenelse{\equal{\CoverOption}{classic}}{\color{white}}{\color{frontpagedark}}
+    \vspace*{\baselineskip}
+
+    \ifthenelse{\equal{\CoverOption}{classic}}{
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
+            \begin{figure}
+                %\includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESTG-Logo-W.pdf}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+                
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
+            \begin{figure}
+               % \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/IPLeiria-ESAD-Logo-W.pdf}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+
+            
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+    } {
+        \ifthenelse{\equal{\SchoolOption}{estg}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+                % \includegraphics[width=0.4\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esad}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esslei}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{estm}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+        
+        \ifthenelse{\equal{\SchoolOption}{esecs}}{
+            \begin{figure}
+                \includegraphics[width=0.485\linewidth]{Figures/Theme/Logotypes/国科大标准Logo横式一（白色）.png}
+            \end{figure}
+        }{}
+    }
+
+    \vspace{5.5\baselineskip}
+
+    % Title.
+\tnoindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-4cm\relax}{%
+            \setstretch{1.03}
+            \raggedright\bfseries\fontsize{20}{26}\selectfont\GetTitle
+        }
+    }
+
+    \vspace{0.8\baselineskip}
+
+    % Subtitle.
+    \tnoindent
+    \makebox[\textwidth][l]{%
+        \parbox{\dimexpr\textwidth-7cm\relax}{%
+            \setstretch{1.03}
+            \raggedright\fontsize{14}{19}\selectfont\GetSubtitle
+        }
+    }
+
+    \vspace{35pt}  
+
+    % Author.
+    {\noindent\bfseries\fontsize{14}{19}\selectfont\GetFirstAuthor}
+
+    \ifdefined\GetSecondAuthor
+        \vspace{8pt}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetSecondAuthor}
+\tfi
+
+    \ifdefined\GetThirdAuthor
+        \vspace{8pt}
+        {\noindent\bfseries\fontsize{14}{19}\selectfont\GetThirdAuthor}
+\tfi
+ 
+    \vfill
+
+    % School.
+\tnoindent
+    {\noindent\fontsize{10}{12}\selectfont\GetSchool}
+    

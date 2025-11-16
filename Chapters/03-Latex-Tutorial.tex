@@ -1,0 +1,17 @@
+\chapter[Essential LaTeX Tutorial: Fundamentals and Key Concepts]{Essential LaTeX Tutorial Fundamentals and Key Concepts}
+\label{cp:latex-tutorial}
+
+{
+\parindent0pt
+
+In this chapter, we will introduce the \LaTeX~working environment, highlighting the basic essentials you will need to produce your thesis. First of all, \LaTeX~(pronounced ``LAY-tek'' or ``LAH-tek'') is a tool for creating professional-quality documents. Unlike \textit{What You See Is What You Get} editors like Microsoft Word, \LaTeX~uses plain text files containing both content and formatting commands. These files are processed by a TeX engine, which interprets the commands to produce a polished, typeset PDF. This approach lets you focus on your content, leaving the precise formatting and layout to \LaTeX~and the TeX engine, ensuring a professional result every time. While this chapter will introduce you to some important functionalities of \LaTeX~, please take the time to learn \LaTeX~from the beginning. You can always refer to the Overleaf \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Learn LaTeX} series for guidance.
+
+% Moreover, if you are spending an enormous amount of time writing your thesis, it's better to use a proper tool where you don't need to worry about professional layout but can focus solely on the content.
+
+\section{Citations}
+\label{sec:citations}
+We present two distinct approaches for citing entries in the bibliography. The first method involves in-text citations, executed using \verb|\citet{ENTRY}|, while the second method employs \verb|\citep{ENTRY}| for citations within a paragraph. Below is an example demonstrating both usages. It's essential to note that you can cite multiple works within the same citation environment. To achieve this, you should use the following format: \verb|\citep{ENTRY1, ENTRY2, ...}|. It is also possible to cite only the title of the work or the author of the same. To do this, please use \verb|\citetitle{ENTRY}| for title citations and \verb|\citeauthor{ENTRY}| for author citations.
+
+\begin{block}[tip]
+\textit{Proper citations play a crucial role in academic writing, serving as the foundation for credibility, transparency, and the advancement of knowledge. They are a fundamental aspect of responsible scholarly writing. Please ensure accurate and appropriate citations.}
+\end{block} 
